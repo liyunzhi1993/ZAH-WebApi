@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "zah-erp", "zah-erp\zah-erp.csproj", "{1E8AF7E1-4882-470A-B4BA-1860EDF78E90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "zah-vx", "zah-vx\zah-vx.csproj", "{710BE3E2-6CF2-47FC-B367-1DFEB6A66A8D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "zah-core", "zah-core\zah-core.csproj", "{1F2B3FDB-5487-4340-AF14-BC5435D7EA62}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "zah-db", "zah-db\zah-db.csproj", "{911BF6DB-FA17-44FC-9CEE-71ECDBC6DA09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E8AF7E1-4882-470A-B4BA-1860EDF78E90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8AF7E1-4882-470A-B4BA-1860EDF78E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8AF7E1-4882-470A-B4BA-1860EDF78E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8AF7E1-4882-470A-B4BA-1860EDF78E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{710BE3E2-6CF2-47FC-B367-1DFEB6A66A8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{710BE3E2-6CF2-47FC-B367-1DFEB6A66A8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{710BE3E2-6CF2-47FC-B367-1DFEB6A66A8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{710BE3E2-6CF2-47FC-B367-1DFEB6A66A8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F2B3FDB-5487-4340-AF14-BC5435D7EA62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F2B3FDB-5487-4340-AF14-BC5435D7EA62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F2B3FDB-5487-4340-AF14-BC5435D7EA62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F2B3FDB-5487-4340-AF14-BC5435D7EA62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{911BF6DB-FA17-44FC-9CEE-71ECDBC6DA09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{911BF6DB-FA17-44FC-9CEE-71ECDBC6DA09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{911BF6DB-FA17-44FC-9CEE-71ECDBC6DA09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{911BF6DB-FA17-44FC-9CEE-71ECDBC6DA09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9956009-AA77-402B-967A-1CA3F022D34F}
+	EndGlobalSection
+EndGlobal
