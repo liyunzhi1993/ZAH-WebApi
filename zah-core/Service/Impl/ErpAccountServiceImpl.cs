@@ -7,6 +7,7 @@ using System.Security.Claims;
 using System.Text;
 using zah_core.Dto;
 using zah_core.Model;
+using zah_core.Redis;
 using zah_db.Entity;
 using zah_db.Repository;
 
@@ -16,9 +17,11 @@ namespace zah_core.Service.Impl
     {
         private readonly IErpAccountRepository _erpAccountRepository;
         private readonly AppSettings _appSettings;
-        public ErpAccountServiceImpl(IErpAccountRepository erpAccountRepository,IOptions<AppSettings> appSettings)
+        private readonly ICache _redisCache;
+        public ErpAccountServiceImpl(IErpAccountRepository erpAccountRepository,ICache redisCache,IOptions<AppSettings> appSettings)
         {
             _erpAccountRepository = erpAccountRepository;
+            _redisCache = redisCache;
             _appSettings = appSettings.Value;
         }
         public string Authenticate(LoginDto loginDto)
@@ -40,7 +43,9 @@ namespace zah_core.Service.Impl
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
+            var tokenStr = tokenHandler.WriteToken(token);
+            _redisCache.Insert("Token:" + tokenStr ,erpAcccount.AccountId);
+            return tokenStr;
         }
     }
 }

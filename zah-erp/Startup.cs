@@ -16,6 +16,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using zah_core.Service;
 using zah_core.Service.Impl;
+using StackExchange.Redis;
+using zah_core.Redis.Impl;
+using zah_core.Redis;
 
 namespace zah_erp
 {
@@ -41,6 +44,11 @@ namespace zah_erp
             services.AddTransient<IDbConnection>(db => new MySqlConnection(
                     Configuration.GetConnectionString("MysqlConnectionString")));
 
+            var redisSection = Configuration.GetSection("RedisSettings");
+            var redisSettings = redisSection.Get<RedisSettings>();
+            ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(redisSettings.Server+":"+ redisSettings.Port+",password="+ redisSettings.Auth);
+            services.AddTransient<IDatabase>(db => redis.GetDatabase(redisSettings.Db));
+
             var appSettingsSection = Configuration.GetSection("AppSettings");
             services.Configure<AppSettings>(appSettingsSection);
 
@@ -63,6 +71,8 @@ namespace zah_erp
                     ValidateAudience = false
                 };
             });
+
+            services.AddScoped<ICache, RedisCacheImpl>();
 
             services.AddScoped<IErpAccountService, ErpAccountServiceImpl>();
         }
